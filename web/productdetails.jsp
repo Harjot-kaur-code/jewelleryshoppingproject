@@ -177,15 +177,15 @@
 
                 }
             }
-            
+
             function openimage(image)
             {
                 $("#gmodal").modal("show");
-                document.getElementById("gimage").src=image;
+                document.getElementById("gimage").src = image;
             }
         </script>
         <style>
-            
+
             .gimg{
                 width:100% ;height:200px;border:2px solid #000;padding:3px; border-radius: 10px;margin: 10px;
                 cursor: pointer;
@@ -193,7 +193,7 @@
             .gimg:hover{
                 border: 2px solid #d58512;
             }
-            
+
         </style>
 
     </head>
@@ -224,6 +224,7 @@
                 String photo = rs.getString("photo");
                 String category = rs.getString("categoryname");
                 String brand = rs.getString("brand");
+                String skid = rs.getString("skid");
 
 
         %> 
@@ -252,7 +253,6 @@
                                 int rating1 = rsa.getInt("rating");
                                 for (int i = 1; i <= rating1; i++) {
 
-
                             %>
                             <img src="rating/filled_star.png" width="20" height="20" />
                             <%                    }
@@ -266,6 +266,12 @@
 
                             <img src="rating/empty_star.png" width="20" height="20" />
                             <%                    }
+
+                                    ResultSet rss = DBLoader.executeQuery("select * from shopkeeper where skid=" + skid);
+
+                                    rss.next();
+                                    String shopkeepername=rss.getString("name");
+
                             %>
                         </div>
                         <div class="w3agile_description">
@@ -276,6 +282,9 @@
 
                             <br>
                             <h4>Brand:<span style="color: #004284"> <%=brand%></span></h4>
+                            <br>
+                            <h4>By : <span style="color: #004284"> <a href="shopkeeperproduts.jsp?skid=<%=skid%>"><%=shopkeepername%></a></span></h4>
+                            
 
 
                         </div>

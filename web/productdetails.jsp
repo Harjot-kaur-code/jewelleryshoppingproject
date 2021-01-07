@@ -177,7 +177,24 @@
 
                 }
             }
+            
+            function openimage(image)
+            {
+                $("#gmodal").modal("show");
+                document.getElementById("gimage").src=image;
+            }
         </script>
+        <style>
+            
+            .gimg{
+                width:100% ;height:200px;border:2px solid #000;padding:3px; border-radius: 10px;margin: 10px;
+                cursor: pointer;
+            }
+            .gimg:hover{
+                border: 2px solid #d58512;
+            }
+            
+        </style>
 
     </head>
     <body>
@@ -217,6 +234,11 @@
 
                     <div class="col-md-6 agileinfo_single_left">
                         <img id="example" src="<%=photo%>" alt=" "  class="img-responsive">
+
+
+
+
+
                     </div>
                     <div class="col-md-6 agileinfo_single_right">
                         <h2><%=name%></h2>
@@ -286,6 +308,30 @@
                     </div>
                     <div class="clearfix"> </div>
                 </div>
+
+                <h1 style="margin-top: 20px;">Product Gallery</h1>
+                <div class="row">
+
+                    <%
+
+                        ResultSet rs44 = DBLoader.executeQuery("select * from productgallery where pid=" + pid);
+                        while (rs44.next()) {
+                            String gphoto = rs44.getString("photo");
+
+                    %>
+
+                    <div class="col-sm-3">
+                        <img src="<%=gphoto%>" class="gimg" onclick="openimage('<%=gphoto%>')"/>
+                    </div>
+                    <%                        }
+                    %>
+
+
+
+                </div>
+
+
+
             </div>
         </div>
         <%              }
@@ -335,7 +381,25 @@
             %>
 
         </div>
+        <div id="gmodal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Gallery</h4>
+                    </div>
+                    <div class="modal-body" style="text-align: center">
+                        <img src="" id="gimage" class="img-responsive" style="width:400px;margin: auto" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
         <!-- new -->

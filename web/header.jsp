@@ -1,4 +1,5 @@
 
+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="vmm.DBLoader"%>
 <!-- header -->
@@ -164,7 +165,7 @@
                     }
                 %>
 
-
+               <li><a href="help.jsp">Help & Contact</a></li>
    
          
         
@@ -191,6 +192,7 @@
                 %>
             </form>  
         </div>
+            
         <div class="clearfix"> </div>
     </div>
 </div>
@@ -254,7 +256,7 @@
                     %>
 
 
-                    <li><a href="contact.jsp">Contact</a></li>
+                    <li><a href="feedback.jsp">Feedback</a></li>
                     <li><a href="about.jsp">About</a></li>
                     
                 </ul>

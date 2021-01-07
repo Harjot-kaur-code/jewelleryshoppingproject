@@ -133,6 +133,8 @@
                                                     <i class="fa fa-star blue-star" aria-hidden="true"></i>
 
                                                     <%                    }
+                                                    
+                                                    
                                                     %>
 
                                                     <%

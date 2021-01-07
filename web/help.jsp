@@ -77,14 +77,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <%@include file="header.jsp" %>
 
        
-                        <h1>Contact</h1>
-
-                        <ul class="address">
-                            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>Amritsar City,.</span></li>
-                            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>kalsijot22@gmail.com</li>
-                            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li> 
-                        </ul>
-                    
+               <center><h1>Help</h1></center> 
+               <center>
+                      <ul class="address">
+                            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> Address: 1234k Avenue, 4th block, <span>Amritsar City,.</span></li>
+                            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i> Have a Question Email us: harjotkalsi62@gmail.com</li>
+                            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i> For Any Query Call this no.+91 6280674327</li> 
+                       </ul>
+               </center>
         
         
         

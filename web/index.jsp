@@ -151,7 +151,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="ban-img">
                         <div class=" ban-bottom1">
                             <div class="ban-top">
-                                <img src="myuploads/banner1.png" class="img-responsive" alt=""/>
+                                <img src="myuploads/banner4.jpg" class="img-responsive" alt=""/>
 
                             </div>
                         </div>
@@ -174,37 +174,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!--brands-->
         <div class="brands">
             <div class="container">
-                <h3>Brand Store</h3>
+                <h3>Our Brand </h3>
                 <div class="brands-agile">
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Boucheron</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Bvlgari</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Buccellati</a></p>
                         </div>
                     </div>
 
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Capsul</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Graff</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">TOUS</a></p>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -212,33 +212,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="brands-agile-1">
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Chopard</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">gorjana</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Tiffany & Co.</a></p>
                         </div>
                     </div>
 
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Cartier</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Capucinne</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">PC Jeweller</a></p>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -246,33 +246,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="brands-agile-2">
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Barkev’s</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Josco Group</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Bonito</a></p>
                         </div>
                     </div>
 
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Cuyana</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Senco</a></p>
                         </div>
                     </div>
                     <div class="col-md-2 w3layouts-brand">
                         <div class="brands-w3l">
-                            <p><a href="#">Lorem</a></p>
+                            <p><a href="#">Tanishq</a></p>
                         </div>
                     </div>
                     <div class="clearfix"></div>

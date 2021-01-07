@@ -140,6 +140,42 @@
         <servlet-name>forgotpassword1</servlet-name>
         <servlet-class>forgotpassword1</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>feedbackresponse</servlet-name>
+        <servlet-class>feedbackresponse</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>adminforgotpasswordresponse</servlet-name>
+        <servlet-class>adminforgotpasswordresponse</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>adminforgotpasswordresponse1</servlet-name>
+        <servlet-class>adminforgotpasswordresponse1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>shopkeeperforgotpasswordresponse</servlet-name>
+        <servlet-class>shopkeeperforgotpasswordresponse</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>shopkeeperforgotpasswordresponse1</servlet-name>
+        <servlet-class>shopkeeperforgotpasswordresponse1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SimpleMailDemo</servlet-name>
+        <servlet-class>vmm.SimpleMailDemo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addproductgallery</servlet-name>
+        <servlet-class>addproductgallery</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>fetchproductgallery</servlet-name>
+        <servlet-class>fetchproductgallery</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteproductgallery</servlet-name>
+        <servlet-class>deleteproductgallery</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>signupresponse</servlet-name>
         <url-pattern>/signupresponse</url-pattern>
@@ -279,6 +315,42 @@
     <servlet-mapping>
         <servlet-name>forgotpassword1</servlet-name>
         <url-pattern>/forgotpassword1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>feedbackresponse</servlet-name>
+        <url-pattern>/feedbackresponse</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminforgotpasswordresponse</servlet-name>
+        <url-pattern>/adminforgotpasswordresponse</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminforgotpasswordresponse1</servlet-name>
+        <url-pattern>/adminforgotpasswordresponse1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>shopkeeperforgotpasswordresponse</servlet-name>
+        <url-pattern>/shopkeeperforgotpasswordresponse</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>shopkeeperforgotpasswordresponse1</servlet-name>
+        <url-pattern>/shopkeeperforgotpasswordresponse1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SimpleMailDemo</servlet-name>
+        <url-pattern>/SimpleMailDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addproductgallery</servlet-name>
+        <url-pattern>/addproductgallery</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fetchproductgallery</servlet-name>
+        <url-pattern>/fetchproductgallery</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteproductgallery</servlet-name>
+        <url-pattern>/deleteproductgallery</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

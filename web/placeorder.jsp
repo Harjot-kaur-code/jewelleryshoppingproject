@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : login
     Created on : Dec 9, 2020, 11:41:01 AM
@@ -149,7 +150,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <option>Select City</option>
                             <option>Delhi</option>
                             <option>Amritsar</option>
-
+                            <option>Mumbai</option>
+                            <option>Chandigarh</option>
+                            <option>Patna</option>
+                            <option>Kolkata</option> 
+                            <option>Chennai</option> 
+                            <option>Mohali</option>
+                               
+                               
+                               
                         </select>
 
                         <h4 id="loginresult"></h4>
@@ -160,12 +169,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             data-key="rzp_test_96HeaVmgRvbrfT"
                             data-amount="<%=request.getParameter("totalprice")%>00"
                             data-buttontext="Pay with Razorpay"
-                            data-name="Online Shopping"
+                  
+                            data-name="Jewellery Shopping"
                             data-description=""
-                            data-image="images/1.png"
-                            data-prefill.name="Online Shopping"
+                            data-image="images/card.png"
+                            data-prefill.name="Jewellery Shopping"
                             data-prefill.email="email@gmail.com"
-                            data-theme.color="yellowgreen"
+                            data-theme.color="orangewhite"
                             >
                         </script>
 

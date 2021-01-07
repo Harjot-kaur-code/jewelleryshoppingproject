@@ -42,12 +42,12 @@
 
             var otp;
             var username;
-            function forgotpassword()
+            function shopkeeperforgotpassword()
             {
                 //write logic here to send ajax request
                 //write logic here to send ajax request
 
-                username = document.getElementById("username").value;
+                username = document.getElementById("id").value;
 
                 if (username == "")
                 {
@@ -72,25 +72,24 @@
                             } else
                             {
                                 document.getElementById("sec2").style.display = "block";
-                                document.getElementById("changepasswordresult").innerHTML = "OTP has been sent to your Email";
+                                document.getElementById("changepasswordresult").innerHTML = "OTP has been sent to your phoneno";
 
                                 otp = res;
-
-                                console.log(otp);
+                                alert(otp);
                             }
 
                         }
                     };
 
-                    var querystring = "username=" + username;
-                    xhr.open("GET", "forgotpassword?" + querystring, true);
+                    var querystring = "id=" + id;
+                    xhr.open("GET", "shopkeeperforgotpasswordresponse?" + querystring, true);
                     xhr.send();
 
                 }
 
             }
 
-            function checkotp()
+            function shopkeepercheckotp()
             {
                 var userotp = document.getElementById("otp").value;
                 if (userotp == "")
@@ -102,7 +101,6 @@
                     {
                         document.getElementById("mainsec").style.display = "none";
                         document.getElementById("changepasssec").style.display = "block";
-                                document.getElementById("changepasswordresult").innerHTML = "";
 
 
                     } else
@@ -120,7 +118,7 @@
                 location.href = "login.jsp?";
             }
 
-            function changepass()
+            function shopkeeperchangepass()
             {
 
                 var np = document.getElementById("np").value;
@@ -151,8 +149,9 @@
                             if (res == "success")
                             {
                                 alert("Password Changed successfully");
-                                location.href = "login.jsp";
-                            } else
+                                location.href="shopkeeperlogin.jsp";
+                            }
+                            else
                             {
                                 alert("Some error occurred");
                             }
@@ -160,8 +159,8 @@
                         }
                     };
 
-                    var querystring = "username=" + username + "&np=" + np + "&cp=" + cp;
-                    xhr.open("GET", "forgotpassword1?" + querystring, true);
+                    var querystring = "id="+id+"&np=" + np+"&cp="+cp;
+                    xhr.open("GET", "shopkeeperforgotpasswordresponse1?" + querystring, true);
                     xhr.send();
 
                 }
@@ -198,7 +197,7 @@
             <div class="container">
                 <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
                     <li><a href="index.jsp"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-                    <li class="active">Forgot Password Page</li>
+                    <li class="active">Change Password Page</li>
                 </ol>
             </div>
         </div>
@@ -206,7 +205,7 @@
         <!-- register -->
         <div class="register">
             <div class="container">
-                <h2>Forgot Password</h2>
+                <h2>Change Password</h2>
                 <div class="login-form-grids">
                     <h5>profile information</h5>
                     <form id="signupform">
@@ -214,9 +213,9 @@
                         <div id="mainsec">
 
 
-                            <input type="text" placeholder="Enter Username" name="username" id="username"  value="" required=" " >
+                            <input type="text" placeholder="Enter ID" name="id" id="id"  value="" required=" " >
                             <br>
-                            <input type="button" onclick="forgotpassword()" name="forgotbutton"  value="Submit">
+                            <input type="button" onclick="shopkeeperforgotpassword()" name="forgotbutton"  value="Submit">
                             <br>
 
                             <div id="sec2">
@@ -226,7 +225,7 @@
                                 <br>
                                 <br>
 
-                                <input type="button" onclick="checkotp()" name="button"  value="change">
+                                <input type="button" onclick="shopkeepercheckotp()" name="button"  value="change">
                             </div>
 
                         </div>
@@ -237,7 +236,7 @@
                             <input type="password" placeholder="Confirm New password" name="cp" id="cp" required=" " >
                             <br>
                             <br>
-                            <input type="button" onclick="changepass()"  value="change">
+                            <input type="button" onclick="shopkeeperchangepass()"  value="change">
 
                         </div>
                         <h4 id="changepasswordresult"></h4>

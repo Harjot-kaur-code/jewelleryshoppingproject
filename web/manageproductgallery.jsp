@@ -1,8 +1,8 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
+
         <title>Super Market an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
         <!-- for-mobile-apps -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,13 +33,12 @@
                 });
             });
         </script>
-        <!-- start-smoth-scrolling -->
         <script>
 
 
             var jsonarr;
 
-            function addproduct()
+            function addphototogallery()
             {
                 var formdata = new FormData();
 
@@ -67,6 +66,7 @@
                     {
                         // for input type text ,password, email
                         formdata.append(controls[i].name, controls[i].value);
+//                        alert(formdata);
                     }
                 }
                 if (flag == 1)
@@ -88,20 +88,19 @@
                             res = res.trim();
                             if (res == "success")
                             {
-                                document.getElementById("status").innerHTML = "Product added Successfuly";
+                                document.getElementById("status").innerHTML = "Photo added Successfuly";
                                 document.getElementById("status").style.color = "green";
-                                document.getElementById("productname").value = "";
-                                document.getElementById("description").value = "";
-                                document.getElementById("myfile").value = "";
-                                document.getElementById("price").value = "";
-                                document.getElementById("offerprice").value = "";
-                                document.getElementById("brand").value = "";
 
-                                fetchproducts();
+
+                                document.getElementById("caption").value = "";
+                                document.getElementById("myfile").value = "";
+
+
+                                fetchgallery();
 
                             } else
                             {
-                                document.getElementById("status").innerHTML = "Error while adding product";
+                                document.getElementById("status").innerHTML = "Error in adding Photo";
                                 document.getElementById("status").style.color = "red";
 
                             }
@@ -109,7 +108,7 @@
                         }
                     };
 
-                    xhr.open("POST", "addproduct", true);
+                    xhr.open("POST", "addproductgallery", true);
 
 
                     xhr.send(formdata);
@@ -118,7 +117,8 @@
 
             }
 
-            function fetchproducts()
+
+            function fetchgallery()
             {
 
                 var xhr = new XMLHttpRequest();
@@ -135,70 +135,48 @@
 
                         jsonarr = jsonobj["ans"];
 
-                        var ans = "<table class=\"table table-bordered\">";
+                        var ans = "";
 
-                        ans += "<tr>";
-                        ans += "<th>Product Name</th>";
-                        ans += "<th>Description</th>";
-                        ans += "<th>Price</th>";
-                        ans += "<th>Offer Price</th>";
-                        ans += "<th>Brand</th>";
-                        ans += "<th>Category Name</th>";
-                        ans += "<th>Photo</th>";
-                        ans += "<th>Delete</th>";
-                        ans += "<th></th>";
-
-                        ans += "</tr>";
-
+                        ans += "<div class=\"row\">";
 
 
                         for (var i = 0; i < jsonarr.length; i++)
                         {
                             var o = jsonarr[i];
-                            ans += "<tr>";
-                            ans += "<td>" + o.name + "</td>";
-                            ans += "<td>" + o.description + "</td>";
-                            ans += "<td>" + o.price + "</td>";
-                            ans += "<td>" + o.offerprice + "</td>";
-                            ans += "<td>" + o.brand + "</td>";
-                            ans += "<td>" + o.categoryname + "</td>";
+                            ans += "<div class='col-sm-3'>";
 
-                            ans += "<td><img src=\"" + o.photo + "\" width=\"60\" height=\"60\"  />&nbsp;<span onclick=\"editphoto('" + i + "')\" >edit</span></td>";
-                            ans += "<td><span onclick=\"deleteproduct('" + o.pid + "')\" class=\"fa fa-trash\" style=\"font-size:25px;color:red;\" ></span></td>";
-                            ans += "<td><button onclick=\"managegallery('" + o.pid + "')\" class=\"btn btn-success\" >Manage Gallery</button></td>";
-
-                            ans += "</tr>";
+                            ans += "<div class='gimg'>";
+                            ans += "<div style='text-align:right;padding:5px;'><span class='fa fa-times' onclick=\"delphoto('" + o.pgid + "')\" style='font-size:25px;'></span></div>"
+                            ans += "<img src=\"" + o.photo + "\" class='img-responsive' />";
+                            ans += "<h5>" + o.caption + "</h5>";
+                            ans += "</div>";
+                            ans += "</div>";
 
                         }
 
-                        ans += "</table>";
+                        ans += "</div>";
 
                         document.getElementById("sec").innerHTML = ans;
 
                     }
                 };
 
-                xhr.open("GET", "fetchproducts", true);
+                var pid = document.getElementById("pid").value;
+                xhr.open("GET", "fetchproductgallery?pid=" + pid, true);
                 xhr.send();
 
 
-
-
             }
 
-            function managegallery(pid)
-            {
-                location.href = "manageproductgallery.jsp?pid=" + pid;
-            }
 
-            function deleteproduct(pid)
+
+            function delphoto(pgid)
             {
                 var option = confirm("Are you sure you want to delete it?");
-                if (option)
+
+                if (option == true)
                 {
-
                     var xhr = new XMLHttpRequest();
-
                     xhr.onreadystatechange = function ()
                     {
                         if (xhr.readyState === 4 && xhr.status == 200)
@@ -206,130 +184,101 @@
                             //get response from server
                             var res = xhr.responseText;
                             res = res.trim();
-
-                            alert(res);
                             if (res == "success")
                             {
-                                alert("Deleted successfully");
-                                fetchproducts();
+                                document.getElementById("status").innerHTML = "Deleted successfuly";
+                                fetchgallery();
+
+                            } else
+                            {
+                                document.getElementById("status").innerHTML = "Error in deletion";
+
                             }
                         }
                     };
 
-                    xhr.open("GET", "deleteproduct?pid=" + pid, true);
-
+                    xhr.open("GET", "deleteproductgallery?pgid=" + pgid, true);
                     xhr.send();
 
                 }
-            }
-
-            function fetchcategorynames()
-            {
-                var xhr = new XMLHttpRequest();
-
-                xhr.onreadystatechange = function ()
-                {
-                    if (xhr.readyState === 4 && xhr.status == 200)
-                    {
-                        //get response from server
-                        var res = xhr.responseText;
-                        res = res.trim();
-
-                        var jsonobj = JSON.parse(res);
-
-                        var jsonarr = jsonobj["ans"];
-
-                        var content = "";
-
-                        for (var i = 0; i < jsonarr.length; i++)
-                        {
-                            var o = jsonarr[i];
-                            content += "<option>" + o.categoryname + "</option>";
-                        }
-
-                        document.getElementById("categoryname").innerHTML = content;
-
-                        fetchproducts();
-
-
-                    }
-                };
-
-                xhr.open("GET", "getcategorynames", true);
-
-                xhr.send();
 
             }
+
 
 
 
         </script>
+        <style>
 
-
+            .gimg
+            {
+                padding: 10px;
+                border-bottom: 2px solid brown;
+                box-shadow: 1px 1px 11px rgba(0,0,0,0.3);
+                border-radius: 3px;
+                margin: 10px;
+            }
+            .gimg h5{
+                text-align: center;
+                font-weight: bold;
+                font-size: 25px;
+                margin-top: 10px;
+            }
+        </style>
 
     </head>
-    <body onload="fetchcategorynames()">
-
+    <body onload="fetchgallery()">
         <%@include file="header.jsp" %>
 
-        <div class="container">
 
-            <div style="margin:40px 20px;padding:20px;">
-                <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2" >
+        
+        <div class="container" style="padding: 20px;">
 
-                        <h1 class="text-center">Add Product</h1>
+            <h1 style="text-align: center">Add Gallery Photo
+               
+            </h1>
+
+            <div class="row">
+
+                <div class="col-sm-8 col-sm-offset-2" >
+                    <br>
+                    <div style="margin: 20px;">
                         <form id="form1">
+
                             <div class="form-group">
-                                <input type="text" placeholder="Enter Product Name" name="productname" id="productname" class="form-control"/> 
+                                <label for="caption">Enter Caption:</label>
+                                <input type="text" placeholder="Enter Product name" name="caption" id="caption" class="form-control"  />
+                            </div> 
+                            <input type="text" placeholder="Enter Product id" name="pid" id="pid"hidden="" value="<%=request.getParameter("pid")%>"  />
+
+
+                            <div class="form-group">
+                                <label for="myfile">Choose Photo:</label>
+                                <input type="file" name="myfile" id="myfile"  />
                             </div>
-                            <div class="form-group">
-                                <input type="text" placeholder="Enter Description" name="description" id="description" class="form-control"  />
-                            </div> 
-                            <div class="form-group">
-                                <input type="number" placeholder="Enter price" name="price" id="price" class="form-control"  />
-                            </div> 
-                            <div class="form-group">
-                                <input type="number" placeholder="Enter offer price" name="offerprice" id="offerprice" class="form-control"  />
-                            </div> 
-                            <div class="form-group">
-                                <input type="text" placeholder="Enter Brand" name="brand" id="brand" class="form-control"  />
-                            </div> 
 
-                            <div class="form-group">
-
-                                <select id="categoryname" name="categoryname" class="form-control">
-
-
-                                </select>
-
-                            </div> 
-
-
-                            <div class="form-group">
-                                Choose Photo: <input type="file" name="myfile" id="myfile"  />
-                            </div>
                         </form>
-
-                        <input type="button" class="btn btn-success" value="ADD" onclick="addproduct()" />
+                        <input type="button" class="btn btn-success" value="ADD" onclick="addphototogallery()" />
 
                         <h3 id="status"></h3>
                     </div>
-
-
                 </div>
 
             </div>
-            <hr>
-            <h1>Already added Products</h1>
+            <br>
 
-            <div id="sec">
-
-
+            <div class="container">
+                <h3 style="font-size: 22px;" class="tittle-w3l text-center">Already Added Photos
+                    <span class="heading-style">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </span>
+                </h3>
             </div>
-
-
+            <div id="sec"></div>
         </div>
+
 
 
 
@@ -379,6 +328,7 @@
 
                             });
         </script>	
-        <!-- //main slider-banner --> 
+
     </body>
 </html>
+

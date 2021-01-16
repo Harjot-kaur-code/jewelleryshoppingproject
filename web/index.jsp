@@ -308,7 +308,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <figure>
                                         <div class="snipcart-item block">
                                             <div class="snipcart-thumb">
-                                                <a href="gotoproductdetail(<%=pid%>)"><img title=" " alt=" " src="<%=photo%>" style="width:200px;height:200px;" ></a>		
+                                                <a href="productdetails.jsp?pid=<%=pid%>"><img title=" " alt=" " src="<%=photo%>" style="width:200px;height:200px;" ></a>		
                                                 <p><%=name%></p>
                                                 <div class="stars">
                                                                                          <%

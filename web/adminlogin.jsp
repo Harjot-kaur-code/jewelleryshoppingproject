@@ -112,7 +112,8 @@ jQuery(document).ready(function ($) {
                         <input type="button" onclick="loginlogic()" value="Login">
                     </form>
                 </div>
-       
+                
+                <p>  <a href="adminforgetpassword.jsp">Forgot Password<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
             </div>
         </div>
         <!-- //login -->

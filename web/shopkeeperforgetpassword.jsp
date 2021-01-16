@@ -47,7 +47,7 @@
                 //write logic here to send ajax request
                 //write logic here to send ajax request
 
-                username = document.getElementById("id").value;
+                username = document.getElementById("skid").value;
 
                 if (username == "")
                 {
@@ -72,16 +72,16 @@
                             } else
                             {
                                 document.getElementById("sec2").style.display = "block";
-                                document.getElementById("changepasswordresult").innerHTML = "OTP has been sent to your phoneno";
+                                document.getElementById("changepasswordresult").innerHTML = "OTP has been sent to your email";
 
                                 otp = res;
-                                alert(otp);
+                                 console.log(otp);
                             }
 
                         }
                     };
 
-                    var querystring = "id=" + id;
+                    var querystring = "skid=" + username;
                     xhr.open("GET", "shopkeeperforgotpasswordresponse?" + querystring, true);
                     xhr.send();
 
@@ -101,7 +101,7 @@
                     {
                         document.getElementById("mainsec").style.display = "none";
                         document.getElementById("changepasssec").style.display = "block";
-
+                         document.getElementById("changepasswordresult").innerHTML = "";
 
                     } else
                     {
@@ -115,7 +115,7 @@
 
             function gotologin()
             {
-                location.href = "login.jsp?";
+                location.href = "shopkeeperlogin.jsp?";
             }
 
             function shopkeeperchangepass()
@@ -159,7 +159,7 @@
                         }
                     };
 
-                    var querystring = "id="+id+"&np=" + np+"&cp="+cp;
+                    var querystring = "skid=" + username + "&np=" + np + "&cp=" + cp;
                     xhr.open("GET", "shopkeeperforgotpasswordresponse1?" + querystring, true);
                     xhr.send();
 
@@ -213,7 +213,7 @@
                         <div id="mainsec">
 
 
-                            <input type="text" placeholder="Enter ID" name="id" id="id"  value="" required=" " >
+                            <input type="text" placeholder="Enter ID" name="skid" id="skid"  value="" required=" " >
                             <br>
                             <input type="button" onclick="shopkeeperforgotpassword()" name="forgotbutton"  value="Submit">
                             <br>
